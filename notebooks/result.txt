@@ -1,0 +1,6 @@
+Results (validation split, simulated data)
+Variant	Macro-F1	Accuracy	ECE	Severity MAE
+Vision only	3.7%	12.5%	0.057	19.91
+Vision + weather	24.8%	33.3%	0.153	19.79
+Vision + motion	18.9%	25.0%	0.069	19.83
+Full model (all + GNN)	22.0%	29.2%	0.111	19.98

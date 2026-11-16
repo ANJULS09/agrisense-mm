@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # 1. Mosquitto MQTT Broker
+  mqtt-broker:
+    image: eclipse-mosquitto:2.0
+    container_name: agrisense-mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    restart: unless-stopped
+
+  # 2. FastAPI Ingestion & Routing Backend
+  backend:
+    build: .
+    container_name: agrisense-backend
+    command: python serve.py
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - mqtt-broker
+    restart: unless-stopped
+
+  # 3. Streamlit Decision Dashboard
+  dashboard:
+    build: .
+    container_name: agrisense-dashboard
+    command: streamlit run dashboard/app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    depends_on:
+      - backend
+    restart: unless-stopped
+

@@ -1,0 +1,416 @@
+{
+  "1_Vision_Only": {
+    "classification": {
+      "accuracy": 0.125,
+      "precision_macro": 0.0208,
+      "recall_macro": 0.1667,
+      "f1_macro": 0.037,
+      "ece": 0.057,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ]
+      ],
+      "calibration_bins": {
+        "accuracies": [
+          0.0,
+          0.125,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "confidences": [
+          0.05,
+          0.18204717338085175,
+          0.25,
+          0.35000000000000003,
+          0.45,
+          0.55,
+          0.6500000000000001,
+          0.75,
+          0.8500000000000001,
+          0.95
+        ]
+      }
+    },
+    "severity": {
+      "mae": 19.91,
+      "rmse": 23.62,
+      "r2": 0.0019
+    },
+    "forecasting": {
+      "t3_acc": 0.1667,
+      "t3_f1": 0.0533,
+      "t7_acc": 0.25,
+      "t7_f1": 0.1308
+    },
+    "latency_ms_per_sample": 27.03,
+    "description": "Baseline: Leaf images only (EfficientNet-B0)"
+  },
+  "2_Vision_Plus_Env": {
+    "classification": {
+      "accuracy": 0.3333,
+      "precision_macro": 0.1885,
+      "recall_macro": 0.4167,
+      "f1_macro": 0.2477,
+      "ece": 0.1529,
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          3,
+          0
+        ]
+      ],
+      "calibration_bins": {
+        "accuracies": [
+          0.0,
+          0.3333333333333333,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "confidences": [
+          0.05,
+          0.18042373657226562,
+          0.25,
+          0.35000000000000003,
+          0.45,
+          0.55,
+          0.6500000000000001,
+          0.75,
+          0.8500000000000001,
+          0.95
+        ]
+      }
+    },
+    "severity": {
+      "mae": 19.79,
+      "rmse": 23.6,
+      "r2": 0.0028
+    },
+    "forecasting": {
+      "t3_acc": 0.1667,
+      "t3_f1": 0.0494,
+      "t7_acc": 0.3333,
+      "t7_f1": 0.0988
+    },
+    "latency_ms_per_sample": 5.17,
+    "description": "Multimodal: Leaf images + 14-day Weather/Soil Bi-LSTM"
+  },
+  "3_Vision_Env_Motion": {
+    "classification": {
+      "accuracy": 0.25,
+      "precision_macro": 0.1696,
+      "recall_macro": 0.2917,
+      "f1_macro": 0.1892,
+      "ece": 0.0689,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "calibration_bins": {
+        "accuracies": [
+          0.0,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "confidences": [
+          0.05,
+          0.18107521533966064,
+          0.25,
+          0.35000000000000003,
+          0.45,
+          0.55,
+          0.6500000000000001,
+          0.75,
+          0.8500000000000001,
+          0.95
+        ]
+      }
+    },
+    "severity": {
+      "mae": 19.83,
+      "rmse": 23.66,
+      "r2": -0.0019
+    },
+    "forecasting": {
+      "t3_acc": 0.1667,
+      "t3_f1": 0.0476,
+      "t7_acc": 0.2083,
+      "t7_f1": 0.0833
+    },
+    "latency_ms_per_sample": 2.99,
+    "description": "Vision + Env + 1D-CNN IMU Quality Blur Gating"
+  },
+  "4_Full_AgriSense_MM": {
+    "classification": {
+      "accuracy": 0.2917,
+      "precision_macro": 0.1984,
+      "recall_macro": 0.3333,
+      "f1_macro": 0.22,
+      "ece": 0.111,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ]
+      ],
+      "calibration_bins": {
+        "accuracies": [
+          0.0,
+          0.2916666666666667,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "confidences": [
+          0.05,
+          0.18068592250347137,
+          0.25,
+          0.35000000000000003,
+          0.45,
+          0.55,
+          0.6500000000000001,
+          0.75,
+          0.8500000000000001,
+          0.95
+        ]
+      }
+    },
+    "severity": {
+      "mae": 19.98,
+      "rmse": 23.91,
+      "r2": -0.0228
+    },
+    "forecasting": {
+      "t3_acc": 0.125,
+      "t3_f1": 0.037,
+      "t7_acc": 0.125,
+      "t7_f1": 0.037
+    },
+    "latency_ms_per_sample": 2.42,
+    "description": "Full System: Cross-Attention Fusion + Spatial Zone GNN"
+  },
+  "missing_modality_robustness": {
+    "all_modalities_present": {
+      "accuracy": 0.2917,
+      "f1_macro": 0.22,
+      "sev_mae": 19.98
+    },
+    "camera_failure_drop_vision": {
+      "accuracy": 0.1667,
+      "f1_macro": 0.0476,
+      "sev_mae": 20.05
+    },
+    "weather_sensor_drop_env": {
+      "accuracy": 0.2917,
+      "f1_macro": 0.165,
+      "sev_mae": 20.01
+    },
+    "imu_failure_drop_motion": {
+      "accuracy": 0.1667,
+      "f1_macro": 0.0476,
+      "sev_mae": 19.96
+    }
+  }
+}
